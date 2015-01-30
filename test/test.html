@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test fiedel</title>
+  <link rel="stylesheet" href="../node_modules/mocha-phantomjs/node_modules/mocha/mocha.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../bower_components/es6-promise/promise.js"></script>
+  <script src="../bower_components/web-audio-test-api/index.js"></script>
+  <script src="../node_modules/mocha-phantomjs/node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/sinon-browser-only/sinon.js"></script>
+  <script src="../fiedel.js"></script>
+  <script>
+    mocha.setup("bdd");
+  </script>
+  <script src="fiedel.js"></script>
+  <script src="audio.js"></script>
+  <script src="sequencer.js"></script>
+  <script src="track.js"></script>
+  <script src="loader.js"></script>
+  <script>
+    ES6Promise.polyfill();
+    var expect = chai.expect;
+    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+    else { mocha.run(); }
+  </script>
+</body>
+</html>
